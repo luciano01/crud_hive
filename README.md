@@ -2,13 +2,19 @@
 Implementing simple storage operations, CRUD (Create, Read, Update, Delete), using Hive.
 
 ## Functionalities
-- [ ] Create
-- [ ] Read
-- [ ] Update
-- [ ] Delete
+- [x] Create
+- [x] Read
+- [x] Update
+- [x] Delete
 
 ## Screenshots
-Soon...
+<p float="left">
+  <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Launch.png"> 
+  <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Empty.png">
+  <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Home.png"> 
+  <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Create.png"> 
+  <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Update.png">
+</p>
 
 ## For developers
 > To clone locally
