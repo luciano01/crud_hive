@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class ListItemWidget extends StatelessWidget {
   final Task task;
+  final int index;
   final void Function()? onPressedCompleteTask;
   final void Function()? onTap;
   final void Function(DismissDirection)? onDismissed;
@@ -14,13 +15,14 @@ class ListItemWidget extends StatelessWidget {
     required this.task,
     required this.onPressedCompleteTask,
     required this.onTap,
+    required this.index,
     required this.onDismissed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      key: UniqueKey(),
+      key: Key(index.toString()),
       onDismissed: onDismissed,
       direction: DismissDirection.startToEnd,
       confirmDismiss: (DismissDirection direction) async {

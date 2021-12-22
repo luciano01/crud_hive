@@ -11,6 +11,6 @@ class DeleteTaskDataSourceImpl implements DeleteTaskDataSource {
 
   @override
   Future<void> delete({required int index}) async {
-    await _box.delete(index);
+    await _box.deleteAt(index);
   }
 }
