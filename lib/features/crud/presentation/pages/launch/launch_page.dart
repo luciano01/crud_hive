@@ -14,7 +14,7 @@ class LaunchPage extends StatefulWidget {
 class _LaunchPageState extends State<LaunchPage> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 1)).then((_) {
+    Future.delayed(const Duration(seconds: 3)).then((_) {
       Modular.to.pushReplacementNamed('/home');
     });
     super.initState();
