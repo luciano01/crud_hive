@@ -57,12 +57,10 @@ Widget _buildList({
     itemCount: box.length,
     itemBuilder: (context, index) {
       Task _task = box.getAt(index) as Task;
-      debugPrint('${box.getAt(index)}');
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Card(
           child: ListItemWidget(
-            index: index,
             task: _task,
             onPressedCompleteTask: () {
               Task newTask = _task.copyWith(isCompleted: !_task.isCompleted);
