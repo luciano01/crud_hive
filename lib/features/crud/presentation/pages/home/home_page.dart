@@ -8,7 +8,6 @@ import 'package:crud_hive/features/crud/presentation/widgets/home/fab_widget.dar
 import 'package:crud_hive/features/crud/presentation/widgets/home/list_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HomePage extends StatefulWidget {
@@ -67,6 +66,9 @@ Widget _buildList({
               store.update(index: index, task: newTask);
             },
             onDismissed: (_) {
+              store.delete(index: index);
+            },
+            onPressedDeleteTask: () {
               store.delete(index: index);
             },
             onTap: () {

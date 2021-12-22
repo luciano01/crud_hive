@@ -8,7 +8,7 @@ class DateFormatter {
   }
 
   String? formatDateTime({required DateTime dateTime}) {
-    var dateFormatted = DateFormat.yMMMMd('en_US').format(dateTime);
+    var dateFormatted = DateFormat.yMd('en_US').format(dateTime);
     return dateFormatted;
   }
 
