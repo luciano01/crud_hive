@@ -20,7 +20,7 @@ class ListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      key: Key(task.name!),
+      key: UniqueKey(),
       onDismissed: onDismissed,
       direction: DismissDirection.startToEnd,
       confirmDismiss: (DismissDirection direction) async {
@@ -137,7 +137,7 @@ class ListItemWidget extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             Text(
-              task.date?? 'date',
+              task.date ?? 'date',
               style: TextStyle(
                 decoration: task.isCompleted
                     ? TextDecoration.lineThrough

@@ -1,3 +1,4 @@
+import 'package:crud_hive/core/utils/date_formatter.dart';
 import 'package:crud_hive/features/crud/domain/entities/task.dart';
 import 'package:crud_hive/features/crud/domain/usecases/create_task.dart';
 import 'package:crud_hive/features/crud/domain/usecases/delete_task.dart';
@@ -30,15 +31,25 @@ abstract class _RegisterStoreBase with Store {
     }
   }
 
-  void save({required int? index, required Task task}) {
-    if (index == null) {
-      createUseCase.create(task: task);
-    } else {
-      updateUseCase.update(index: index, task: task);
-    }
+  create({required Task task}) async {
+    final newTask = task.copyWith(
+      date: task.date ??
+          DateFormatter().formatDateTime(
+            dateTime: DateTime.now(),
+          ),
+      time: task.time ??
+          DateFormatter().formatTimeOfDay(
+            timeOfDay: TimeOfDay.now(),
+          ),
+    );
+    await createUseCase.create(task: newTask);
   }
 
-  Future<void> delete({required int index}) async {
-    return deleteUseCase.delete(index: index);
+  update({required int index, required Task task}) async {
+    await updateUseCase.update(index: index, task: task);
+  }
+
+  delete({required int index}) {
+    deleteUseCase.delete(index: index);
   }
 }

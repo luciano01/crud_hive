@@ -70,9 +70,7 @@ class AppModule extends Module {
     ),
     ChildRoute(
       '/register',
-      child: (context, args) => RegisterPage(
-        task: args.data,
-      ),
+      child: (context, args) => const RegisterPage(),
       transition: TransitionType.rightToLeft,
     ),
   ];

@@ -1,6 +1,7 @@
 import 'package:crud_hive/core/utils/app_colors.dart';
 import 'package:crud_hive/features/crud/domain/entities/task.dart';
 import 'package:crud_hive/features/crud/presentation/mobx/home/home_store.dart';
+import 'package:crud_hive/features/crud/presentation/pages/register/register_page.dart';
 import 'package:crud_hive/features/crud/presentation/widgets/home/app_bar_widget.dart';
 import 'package:crud_hive/features/crud/presentation/widgets/home/empty_list_widget.dart';
 import 'package:crud_hive/features/crud/presentation/widgets/home/fab_widget.dart';
@@ -62,16 +63,21 @@ Widget _buildList({
           child: ListItemWidget(
             task: _task,
             onPressedCompleteTask: () {
-              Task newTask = _task.copyWith(
-                isCompleted: !_task.isCompleted,
-              );
+              Task newTask = _task.copyWith(isCompleted: !_task.isCompleted);
               store.update(index: index, task: newTask);
             },
             onDismissed: (_) {
               store.delete(index: index);
             },
             onTap: () {
-              Modular.to.pushNamed('/register', arguments: _task);
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => RegisterPage(
+                    index: index,
+                    task: _task,
+                  ),
+                ),
+              );
             },
           ),
         ),

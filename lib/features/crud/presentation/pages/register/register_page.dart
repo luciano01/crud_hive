@@ -55,8 +55,13 @@ class RegisterPageState extends ModularState<RegisterPage, RegisterStore> {
         iconColor: AppColors.white,
         onPressed: () {
           if (_formKey.currentState!.validate()) {
-            store.save(index: widget.index, task: _task!);
-            Modular.to.pop();
+            if (widget.index == null) {
+              store.create(task: _task!);
+              Modular.to.pop();
+            } else {
+              store.update(index: widget.index!, task: _task!);
+              Modular.to.pop();
+            }
           }
         },
       ),
@@ -75,10 +80,7 @@ class RegisterPageState extends ModularState<RegisterPage, RegisterStore> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HeaderWidget(
-                      index: widget.index,
-                      task: _task,
-                    ),
+                    HeaderWidget(index: widget.index, task: _task!),
                     const SizedBox(height: 20),
                     TextFormFieldWidget(
                       icon: Icons.title_outlined,
