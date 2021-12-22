@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.portfolio.crud_hive">
    <application
-        android:label="crud_hive"
+        android:label="CRUD Hive"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
