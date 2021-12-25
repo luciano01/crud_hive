@@ -1,12 +1,6 @@
 # CRUD Hive
 Implementing simple storage operations, CRUD (Create, Read, Update, Delete), using Hive.
 
-## Functionalities
-- [x] Create
-- [x] Read
-- [x] Update
-- [x] Delete
-
 ## Screenshots
 <p float="left">
   <img width="200" src="https://github.com/luciano01/crud_hive/blob/master/assets/screenshots/Launch.png"> 
